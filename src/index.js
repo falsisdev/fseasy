@@ -1,9 +1,10 @@
 const { readFileSync, writeFile, appendFile, existsSync, unlinkSync } = require("node:fs")
-const event = require("node:events")
 
-class fseasy extends event {
+const event = require("node:events") 
+
+class main extends event {
   readFile(file, property) {
-    if (!file) return "FsEasy TypeError: File is not provided."
+    if (!file) throw new Error ("FsEasy TypeError: File is not provided.");
 
     if (!property) {
       readFileSync(file, "utf8")
@@ -21,7 +22,7 @@ class fseasy extends event {
   }
 
   writeFile(file, text) {
-    if (!file) return "FsEasy TypeError: File is not provided."
+    if (!file) throw new Error ("FsEasy TypeError: File is not provided.");
 
     if (!text) return "FsEasy Error: Blank text cannot be written."
     writeFile(file, text, (err) => {
@@ -31,7 +32,7 @@ class fseasy extends event {
   }
 
   appendFile(file, text) {
-    if (!file) return "FsEasy TypeError: File is not provided."
+    if (!file) throw new Error ("FsEasy TypeError: File is not provided.");
 
     if (!text) {
       return "FsEasy Error: Blank text cannot be written."
@@ -44,19 +45,23 @@ class fseasy extends event {
   }
 
   fileExists(file) {
-    if (!file) return "FsEasy TypeError: File is not provided."
-    return existsSync(file) //boolean
+    if (!file) throw new Error ("FsEasy TypeError: File is not provided.");
+    return existsSync(file) 
   }
-
-  deleteFile(file) {
-    if (!file) return "FsEasy TypeError: File is not provided"
+ 
+  removeFile(file) {
+    if (!file) throw new Error ("FsEasy TypeError: File is not provided.");
     if (existsSync(file) === false) return "FsEasy Error: " + file + " is not defined"
     try {
       unlinkSync(file)
     } catch (error) {
-      return "FsEasy Error: The deletion of the file named " + file + " failed"
+      throw new Error ("FsEasy Error: The removing of the file named " + file + " failed")
     }
   }
+ 
+  
 }
 
-module.exports = new fseasy
+module.exports = new main
+ 
+ 
