@@ -20,7 +20,7 @@ FsEasy - A simplified version of the fs module for Node.js with new functions ad
 ```
 - Delete File
 ```js
-<fse>.deleteFile("package.json")
+<fse>.removeFile("package.json")
 ```
 More funcs, coming soon...
 
