@@ -1,28 +1,7 @@
 # FsEasy
 FsEasy - A simplified version of the fs module for Node.js with new functions added.
 
-## Function List
-- Read File
-```js
-<fse>.readFile("package.json", "name")
-``` 
-- Write File
-```js
-<fse>.writeFile("package.json", "test")
-```
-- Append File
-```js
-<fse>.appendFile("package.json", "test")
-```
-- File Exists
-```js
-<fse>.fileExists("package.json") //boolean
-```
-- Delete File
-```js
-<fse>.removeFile("package.json")
-```
-More funcs, coming soon...
+# **This package is no longer supported❗**
 
 <img src="https://media.discordapp.net/attachments/831451584034111499/867507158291316756/20210721_234326.jpg">
 
